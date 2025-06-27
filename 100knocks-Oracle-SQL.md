@@ -63,9 +63,6 @@ SELECT '氏名: ' || FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME FROM HR.EMPLOYE
 ### 問題 5：DISTINCTの使用  
 `HR.EMPLOYEES` テーブルから、**重複のない部署ID（DEPARTMENT_ID）** をすべて表示してください。
 
-### 問題 4：文字列の連結
-名前と姓を空白区切りで連結し、「氏名: 山田 花子」の形式で表示してください。
-
 <details>
 <summary>解答を見る</summary>
 
