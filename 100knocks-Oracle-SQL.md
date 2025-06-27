@@ -1,12 +1,31 @@
 # Oracle SQL 100本ノック - Oracle Live SQL対応
 
-## 実行環境は以下にあります
+## はじめに
+実行環境は以下のURLにございます。
 [Oracle Live SQL](https://livesql.oracle.com/next/)
 
 この100本ノックでは、Oracle Live SQLの"HRスキーマ"を使ってOracleのSQLを学習していこうという試みです。   
 ![image](https://github.com/user-attachments/assets/b2b3b01f-cde5-4ce9-8e44-1295dff48f71)
 
 また、内容はなるべくOracleのベンダー資格である、[Oracle Silver SQL試験](https://www.oracle.com/jp/education/certification/certification-exam-list/db-sql-1z0-071-exam/)の内容に準拠したものとなるよう心がけています。
+
+### 問題 0：テーブルの構造を確認する  
+一番はじめに、以後の演習で使用する `HR` スキーマの各テーブルの構造を確認しましょう。  
+**`DESC` コマンド**を使うことで、テーブルの列名やデータ型を調べることができます。
+
+以下のコマンドを Live SQL 上で順番に実行して、各テーブルの列構成を把握してください。
+
+<pre><code class="language-sql">
+DESC HR.EMPLOYEES;
+DESC HR.DEPARTMENTS;
+DESC HR.JOBS;
+DESC HR.LOCATIONS;
+DESC HR.REGIONS;
+DESC HR.COUNTRIES;
+DESC HR.JOB_HISTORY;
+</code></pre>
+
+> Oracle Live SQL では `DESC` は SQLとは異なる「コマンド」なので、**複数行の DESC を一度に実行できない**ことがあります。1つずつ実行しましょう。
 
 ---
 
