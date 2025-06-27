@@ -1,7 +1,7 @@
 # Oracle SQL 100本ノック - Oracle Live SQL対応
 
 ## はじめに
-実行環境は以下のURLにございます。
+実行環境は以下のURLにございます。   
 [Oracle Live SQL](https://livesql.oracle.com/next/)
 
 この100本ノックでは、Oracle Live SQLの"HRスキーマ"を使ってOracleのSQLを学習していこうという試みです。   
