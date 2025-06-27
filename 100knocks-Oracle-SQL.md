@@ -37,19 +37,20 @@ SELECT '氏名: ' || FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME FROM HR.EMPLOYE
 SELECT DISTINCT DEPARTMENT_ID FROM HR.EMPLOYEES;
 ```
 
-### 問題 6：NULLを含む列の算術演算  
-給与（SALARY）とコミッション（COMMISSION_PCT）を足し合わせた「**合計報酬**」を表示してください。  
+### 問題 6：算術演算で歩合給を計算する  
+`SALARY`（給与）と `COMMISSION_PCT`（歩合率）を使って、  
+**歩合給（SALARY × COMMISSION_PCT）** を計算し、表示してください。
 
-※`COMMISSION_PCT` は NULL の場合があります。  
-このまま `SALARY + COMMISSION_PCT` をすると、結果も NULL になってしまいます。 
-(後ほどNULLについて扱います。) 
-**NVL 関数である、"NVL(COMMISSION_PCT, 0)"**を使って、`COMMISSION_PCT` が NULL のときは **0 に置き換える処理**
-をしたうえで、計算をしてください。
+※`COMMISSION_PCT` に NULL が含まれているため、そのまま算術演算が出来ません。
+そのため今回は、`FROM ~~~`を書いたらそれに続くように、
+`COMMISSION_PCT IS NOT NULL` を使って、NULLを除外してあげてください。
+（NULLを含む算術演算は、後ほど扱います。）
 
 ```sql
 SELECT FIRST_NAME, SALARY, COMMISSION_PCT,
-       SALARY + NVL(COMMISSION_PCT, 0) AS TOTAL_PAY
-FROM HR.EMPLOYEES;
+       SALARY * COMMISSION_PCT AS COMMISSION_PAY
+FROM HR.EMPLOYEES
+WHERE COMMISSION_PCT IS NOT NULL;
 ```
 
 ### 問題 7：WHERE句による条件指定
