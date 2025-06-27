@@ -43,7 +43,8 @@ SELECT DISTINCT DEPARTMENT_ID FROM HR.EMPLOYEES;
 ※`COMMISSION_PCT` は NULL の場合があります。  
 このまま `SALARY + COMMISSION_PCT` をすると、結果も NULL になってしまいます。 
 (後ほどNULLについて扱います。) 
-**NVL 関数である、`NVL(COMMISSION_PCT, 0)`**を使って、`COMMISSION_PCT` が NULL のときは **0 に置き換えて計算**してください。
+**NVL 関数である、"NVL(COMMISSION_PCT, 0)"**を使って、`COMMISSION_PCT` が NULL のときは **0 に置き換える処理**
+をしたうえで、計算をしてください。
 
 ```sql
 SELECT FIRST_NAME, SALARY, COMMISSION_PCT,
