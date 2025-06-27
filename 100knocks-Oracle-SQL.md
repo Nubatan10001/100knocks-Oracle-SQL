@@ -4,13 +4,13 @@
 実行環境は以下のURLにございます。   
 [Oracle Live SQL](https://livesql.oracle.com/next/)
 
-この100本ノックでは、Oracle Live SQLの"HRスキーマ"を使ってOracleのSQLを学習していこうという試みです。   
+この100本ノックでは、Oracle Live SQLの`HRスキーマ`を使ってOracleのSQLを学習していこうという試みです。   
 ![image](https://github.com/user-attachments/assets/b2b3b01f-cde5-4ce9-8e44-1295dff48f71)
 
 また、内容はなるべくOracleのベンダー資格である、[Oracle Silver SQL試験](https://www.oracle.com/jp/education/certification/certification-exam-list/db-sql-1z0-071-exam/)の内容に準拠したものとなるよう心がけています。
 
 ### 問題 0：テーブルの構造を確認する  
-一番はじめに、以後の演習で使用する `HR` スキーマの各テーブルの構造を確認しましょう。  
+一番はじめに、以後の演習で使用する `HRスキーマ`の各テーブルの構造を確認しましょう。  
 **`DESC` コマンド**を使うことで、テーブルの列名やデータ型を調べることができます。
 
 以下のコマンドを Live SQL 上で順番に実行して、各テーブルの列構成を把握してください。
