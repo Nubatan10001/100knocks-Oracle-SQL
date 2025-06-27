@@ -4,6 +4,7 @@
 [Oracle Live SQL](https://livesql.oracle.com/next/)
 
 この100本ノックでは、Oracle Live SQLの"HRスキーマ"を使ってOracleのSQLを学習していこうという試みです。   
+![image](https://github.com/user-attachments/assets/b2b3b01f-cde5-4ce9-8e44-1295dff48f71)
 
 また、内容はなるべくOracleのベンダー資格である、[Oracle Silver SQL試験](https://www.oracle.com/jp/education/certification/certification-exam-list/db-sql-1z0-071-exam/)の内容に準拠したものとなるよう心がけています。
 
