@@ -1,4 +1,13 @@
-# Oracle SQL 100本ノック - Oracle Live SQL対応（HRスキーマ）
+# Oracle SQL 100本ノック - Oracle Live SQL対応
+
+## 実行環境は以下にあります
+[Oracle Live SQL](https://livesql.oracle.com/next/)
+
+この100本ノックでは、Oracle Live SQLの"HRスキーマ"を使ってOracleのSQLを学習していこうという試みです。   
+
+また、内容はなるべくOracleのベンダー資格である、[Oracle Silver SQL試験](https://www.oracle.com/jp/education/certification/certification-exam-list/db-sql-1z0-071-exam/)の内容に準拠したものとなるよう心がけています。
+
+---
 
 ## 1〜10問：SELECT文の基本
 
