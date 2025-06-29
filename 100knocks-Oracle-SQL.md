@@ -170,6 +170,147 @@ WHERE EMAIL LIKE 'A%';
 
 ---
 
-## 11〜n問：~~~~~
+## 11〜20問：WHERE句・演算・NULLの扱い
 
-### 問題11 作成中・・・。
+### 問題 11：給与が6000を超える従業員を抽出する  
+`SALARY` が 6000 を超える従業員の名前と給与を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY
+FROM HR.EMPLOYEES
+WHERE SALARY > 6000;
+</code></pre>
+
+</details>
+
+### 問題 12：給与が3000以上7000以下の従業員を抽出する  
+`SALARY` が 3000〜7000 の範囲にある従業員の名前と給与を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY
+FROM HR.EMPLOYEES
+WHERE SALARY BETWEEN 3000 AND 7000;
+</code></pre>
+
+</details>
+
+### 問題 13：メールアドレスが「S」で始まる従業員を表示する  
+`EMAIL` が「S」で始まる従業員の名前とメールアドレスを表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, EMAIL
+FROM HR.EMPLOYEES
+WHERE EMAIL LIKE 'S%';
+</code></pre>
+
+</details>
+
+### 問題 14：給与の昇順で従業員を並べる  
+`SALARY` を昇順に並べて従業員の名前と給与を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY
+FROM HR.EMPLOYEES
+ORDER BY SALARY ASC;
+</code></pre>
+
+</details>
+
+### 問題 15：給与の降順で上位5人を表示する  
+給与（`SALARY`）の高い順に、上位5人の従業員を表示してください。  
+※Oracleでは `ROWNUM` を使います。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY
+FROM HR.EMPLOYEES
+ORDER BY SALARY DESC
+FETCH FIRST 5 ROWS ONLY;
+</code></pre>
+
+</details>
+
+### 問題 16：歩合給が設定されている従業員のみを表示する  
+`COMMISSION_PCT` が NULL でない従業員を抽出してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY, COMMISSION_PCT
+FROM HR.EMPLOYEES
+WHERE COMMISSION_PCT IS NOT NULL;
+</code></pre>
+
+</details>
+
+### 問題 17：給与と歩合給を使って報酬を計算する  
+`SALARY` と `COMMISSION_PCT` を用いて、**歩合給（SALARY × COMMISSION_PCT）** を計算してください。  
+NULLは除外してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY, COMMISSION_PCT,
+       SALARY * COMMISSION_PCT AS COMMISSION_PAY
+FROM HR.EMPLOYEES
+WHERE COMMISSION_PCT IS NOT NULL;
+</code></pre>
+
+</details>
+
+### 問題 18：MOD関数で給与の千円未満を求める  
+`SALARY` を 1000 で割った余りを求め、`MOD` 関数を使って「千円未満の端数」を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY, MOD(SALARY, 1000) AS SALARY_MOD
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 19：ROUND関数で給与を百円単位に丸める  
+`SALARY` を 100 で割ってから `ROUND` で丸めて、給与の百円単位を求めてください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY, ROUND(SALARY / 100, 0) * 100 AS SALARY_ROUNDED
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 20：TRUNC関数で給与の千円単位の切り捨て  
+`SALARY` を `TRUNC` 関数で千円単位に切り捨てた値を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, SALARY, TRUNC(SALARY, -3) AS SALARY_TRUNC
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+---
