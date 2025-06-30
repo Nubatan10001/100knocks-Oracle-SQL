@@ -315,3 +315,138 @@ FROM HR.EMPLOYEES;
 </details>
 
 ---
+
+## 21〜30問：関数と文字列・日付の操作
+
+### 問題 21：氏名を全て大文字で表示する  
+`FIRST_NAME` と `LAST_NAME` を連結し、**全て大文字（UPPER関数）**で表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT UPPER(FIRST_NAME || ' ' || LAST_NAME) AS FULL_NAME_UPPER
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 22：氏名を全て小文字で表示する  
+`FIRST_NAME` と `LAST_NAME` を連結し、**すべて小文字（LOWER関数）**で表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT LOWER(FIRST_NAME || ' ' || LAST_NAME) AS FULL_NAME_LOWER
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 23：氏名の頭文字を大文字に（INITCAP）  
+`FIRST_NAME` と `LAST_NAME` を連結し、**頭文字のみ大文字（INITCAP関数）**で表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT INITCAP(FIRST_NAME || ' ' || LAST_NAME) AS FULL_NAME_FORMATTED
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 24：メールアドレスの文字数を表示する  
+`EMAIL` の文字数（長さ）を `LENGTH` 関数で表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, EMAIL, LENGTH(EMAIL) AS EMAIL_LENGTH
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 25：職種IDの最初の2文字を取り出す  
+`JOB_ID` の先頭2文字だけを `SUBSTR` 関数で抽出してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT JOB_ID, SUBSTR(JOB_ID, 1, 2) AS JOB_PREFIX
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 26：職種IDの末尾2文字を取り出す  
+`JOB_ID` の末尾2文字を `SUBSTR` と `LENGTH` を組み合わせて取り出してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT JOB_ID, SUBSTR(JOB_ID, -2) AS JOB_SUFFIX
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 27：従業員の雇用日を表示する  
+従業員が雇用された日（`HIRE_DATE`）を表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, HIRE_DATE
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 28：雇用日から月だけを抽出する  
+`HIRE_DATE` から月（MM）だけを `TO_CHAR` 関数で抽出して表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, TO_CHAR(HIRE_DATE, 'MM') AS HIRE_MONTH
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 29：HIRE_DATEから年を抽出する  
+`HIRE_DATE` から年（YYYY）だけを抽出して表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, TO_CHAR(HIRE_DATE, 'YYYY') AS HIRE_YEAR
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+### 問題 30：HIRE_DATEと現在日付の差（日数）を表示する  
+`HIRE_DATE` から今日（`SYSDATE`）までの日数を計算して表示してください。
+
+<details>
+<summary>▼ 解答を見る</summary>
+
+<pre><code class="language-sql">
+SELECT FIRST_NAME, HIRE_DATE, SYSDATE - HIRE_DATE AS DAYS_WORKED
+FROM HR.EMPLOYEES;
+</code></pre>
+
+</details>
+
+---
+
